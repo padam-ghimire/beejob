@@ -3,6 +3,9 @@
 use Illuminate\Database\Seeder;
 use App\Role;
 use App\User;
+use App\Company;
+use App\Job;
+use App\Category;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,10 +17,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        factory('App\User',10)->create();
-        factory('App\Company',10)->create();
-        factory('App\Job',10)->create();
-        factory('App\Category',10)->create();
+        User::factory()->count(10)->create();
+        Company::factory()->count(10)->create();
+        Category::factory()->count(10)->create();
+        Job::factory()->count(10)->create();
 
         Role::truncate();
 
